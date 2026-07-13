@@ -1,5 +1,7 @@
 # 🛡️ SentinelOps-AI
 
+**https://sentinel-ops-ai-iota.vercel.app/**
+
 > **Autonomous AI-powered log analysis and self-healing pipeline for AWS infrastructure.**  
 > Detects anomalies. Diagnoses root causes. Remediates — without waking anyone up.
 
