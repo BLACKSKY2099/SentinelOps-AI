@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # 🎨 SentinelOps-AI Dashboard (React + Nginx)
+  dashboard:
+    build:
+      context: ./dashboard
+      dockerfile: Dockerfile
+    container_name: sentinel-ops-dashboard
+    ports:
+      - "8080:80"
+    restart: always
+
+  # 🤖 OpsPilot Healing Agent (Python Core)
+  agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sentinel-ops-agent
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+    volumes:
+      # Mount AWS credentials directory from host for zero-config AWS execution
+      - ~/.aws:/root/.aws:ro
+      # Mount current workspace directory to allow local edits to sync immediately
+      - .:/workspace
+    # Default to testing discover, can override to run the agent loop:
+    # command: python agent/orchestrator.py
+    stdin_open: true
+    tty: true

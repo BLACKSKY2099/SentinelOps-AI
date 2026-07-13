@@ -1,0 +1,26 @@
+# Node/Vite build artifacts
+**/node_modules/
+**/dist/
+dashboard/.oxlintrc.json
+
+# Python caches and virtual environments
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.pytest_cache/
+venv/
+.venv/
+env/
+.env/
+
+# Git and OS metadata
+.git/
+.gitignore
+.gitattributes
+**/.DS_Store
+Thumbs.db
+
+# Agent session and temporary files
+.agents/
+.gemini/
