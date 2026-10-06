@@ -1,0 +1,12 @@
+{
+  "name": "SentinelOps Patient",
+  "demo_url": "http://localhost:8001",
+  "github_repo": "https://github.com/HITESHsai01/Patient",
+  "repo_slug": "HITESHsai01/Patient",
+  "branch": "main",
+  "cloudwatch_log_group": null,
+  "cloudwatch_log_stream": null,
+  "aws_region": "us-east-1",
+  "connected_at": "2026-10-06T07:00:39.886995+00:00",
+  "status": "Connected"
+}
